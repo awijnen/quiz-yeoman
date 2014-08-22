@@ -24,7 +24,6 @@ var quiz = [
     }  
 ];
 
-
 // *** Init ***
 var quizItemCounter = 0;
 var quizTotalItemCount = quiz.length;
