@@ -1,0 +1,37 @@
+.divtest {
+    border: 3px black solid;
+    margin: 20px;
+    width: 200px;
+    padding: 10px;
+}
+
+#div2 {
+    position: relative;
+    height: 300px;
+    background: blue;
+    overflow: hidden;
+}
+
+#div3 {
+    position: absolute;
+    background: red;
+    width: 25%;
+    top: 20%;
+    left: 20%;
+    margin: 0;
+    z-index: 1;
+}
+
+#div4 {
+    position: absolute;
+    background: red;
+    width: 25%;
+    top: 0px;
+    right: 20%;
+    margin: 0;
+}
+
+#makeitscroll {
+    border: 3px black solid;
+    height: 2000px;
+}

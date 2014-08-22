@@ -67,12 +67,17 @@ body {
     }
 }
 
+/* Custom */
+input[name="quiz-option"] {
+    margin: 10px;
+}
+
+input.quiz-option {
+    margin-top: 30px;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-    .container {
-        max-width: 730px;
-    }
-
     /* Remove the padding we set earlier */
     .header,
     .marketing,
