@@ -117,12 +117,19 @@ function isAnswered(event) {
   return result;
 }
 
+function resetRadioSelection(radioButtons) {
+    radioButtons.each(function(idx, el){
+       $(el).attr('checked', false); 
+    });
+}
+
 function questionsIntoSkeleton(quizItem) {
     console.log('loading quiz questions ...');
     
     var quizInstance = $('div.quiz-instance');
     var questionTitle = $('.quiz-question h2');
     var questionAnswers = $('label.quiz-option');
+    var radioButtons = $('input[type="radio"]');
     var submitButton = $('input[type="submit"]');
     var form = $('form.quiz-form');
 
@@ -147,6 +154,8 @@ function questionsIntoSkeleton(quizItem) {
         submitButton.unbind('click', loadNewQuestion);
     }
 
+    console.log('Resetting radio buttons');
+    resetRadioSelection(radioButtons);
     quizInstance.show();
 
     console.log('Finished loading quiz questions');
