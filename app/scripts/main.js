@@ -37,7 +37,6 @@ var correctAnswers = [];
 var score = 0;
 
 // *** Utility functions ***
-// Load quiz skeleton (without pulling questions and answers) upon button click
 function resetQuizItemCounter() {
     quizItemCounter = 0;
 }
@@ -99,6 +98,25 @@ function registerUserSelection() {
     console.log('Pushed answer into array: ' + userAnswers.answers);
 }
 
+function isAnswered(event) {
+  var options = $('input[name="quiz-option"]');
+  var result = false;
+  options.each(function(idx, option) {
+    if (result = option.checked) { 
+      return false;
+    }
+  });
+
+  // Stop registerUserSelection & loadNewQuestion click handlers from firing
+  if (!result) { 
+    alert('Please provide an answer!');    
+    event.stopImmediatePropagation();
+  }
+  
+  console.log('isAnswered will return: ' + result);
+  return result;
+}
+
 function questionsIntoSkeleton(quizItem) {
     console.log('loading quiz questions ...');
     
@@ -117,6 +135,7 @@ function questionsIntoSkeleton(quizItem) {
 
     // first time around bind the click button to a handler which loads a news question/answers into the DOM
     if (quizItemCounter === 0) {
+        submitButton.click(isAnswered);
         submitButton.click(registerUserSelection);
         submitButton.click(loadNewQuestion);
         form.bind('submit', {quiz: quizItem}, loadQuizEnd);
