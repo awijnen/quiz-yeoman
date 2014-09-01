@@ -163,3 +163,4 @@ function questionsIntoSkeleton(quizItem) {
 
 // *** Run ***
 startButton.click(loadNewQuiz);
+
