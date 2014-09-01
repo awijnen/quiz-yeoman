@@ -72,8 +72,13 @@ input[name="quiz-option"] {
     margin: 10px;
 }
 
-input.quiz-option {
+input.btn {
+    width: 160px;
     margin-top: 30px;
+}
+
+input.quiz-back {
+    display: none;
 }
 
 /* Responsive: Portrait tablets and up */
