@@ -8,12 +8,6 @@
 	],
     "ternjs": {
         "exclude": ["node_modules/**"],
-        "libs": ["browser", "jquery"],
-        "plugins": {
-            "requirejs": {
-                "baseURL": "./js"
-            }
-        }
-
+        "libs": ["browser", "jquery"]
     }
 }
